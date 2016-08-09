@@ -1,17 +1,17 @@
 Rails.application.routes.draw do
-  get 'tasks/new'
 
-  get 'tasks/create'
+  ROOT                        to:   'tasks#index'   #affiche tout
+  GET        'tasks/index',   to:   'tasks#index'   #affiche tout
+  GET              'tasks',   to:   'tasks#index'   #affiche tout
 
-  get 'tasks/update'
+  GET         'tasks/show',   to:   'tasks#show'    #affiche une seule
 
-  get 'tasks/edit'
+  GET          'tasks/new',   to:   'tasks#new'     #affiche formulaire création
+  POST             'tasks',   to:   'tasks#create'  #envoie données création
 
-  get 'tasks/destroy'
+  GET     'tasks/:id/edit',   to:   'tasks#edit'    #affiche formulaire modif
+  PATCH        'tasks/:id',   to:   'tasks#update'  #envoie données modif
 
-  get 'tasks/index'
+  DELETE   'tasks/destroy',   to:   'tasks#destroy' #efface
 
-  get 'tasks/show'
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

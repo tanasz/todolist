@@ -1,24 +1,26 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
-  def new
+
+  def index # GET /tasks
+    @tasks = Task.all
   end
 
-  def create
+  def new # GET /tasks/new
   end
 
-  def update
+  def create # POST /tasks
   end
 
-  def edit
+  def update # PATCH /tasks/:id
   end
 
-  def destroy
+  def edit # GET /tasks/:id/edit
   end
 
-  def index
+  def destroy # DESTROY /tasks/:id
   end
 
-  def show
+  def show # GET /tasks/:id
   end
 
   private
